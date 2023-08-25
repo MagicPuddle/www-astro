@@ -1,0 +1,90 @@
+---
+// GodGas Theme
+
+// Import the global.css file here so that it is included on
+// all pages through the use of the <BaseHead /> component.
+
+// JavaScript
+import "../js/mp-nav.js";
+
+// CSS
+import "../styles/global.css";
+import "../styles/colors.css";
+import "../styles/media-query.css";
+import "../styles/index.css";
+
+// Font
+import "@fontsource/fugaz-one";
+
+export interface Props {
+  title: string;
+  description: string;
+  image?: string;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const { title, description, image = "/placeholder-social.jpg" } = Astro.props;
+---
+
+<!-- Primary Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="generator" content={Astro.generator} />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, Astro.url)} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<!-- *** MagiPuddle *** -->
+<!-- Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Fugaz+One|Source+Sans+Pro&display=swap"
+  rel="stylesheet"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/hack-font/3.3.0/web/hack.min.css"
+  integrity="sha512-XgCw4Srl8lC1ECwcaHwAU0WnxQwHkqmInzg9wJLtGB7DRuMaXPuK2k9WJ2AwRDGdrgK9eJpZl2hUlLi2WQssmw=="
+  crossorigin="anonymous"
+/>
+
+<!-- Font Awesome -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
+<noscript>
+  <div
+    class="alert alert-with-icon alert-error no-js-alert"
+    data-nosnippet="true">
+    <i class="icon alert-icon icon-alert-alt"></i>
+    <p>
+      Parts of the MagicPuddle website will not work properly without
+      JavaScript. Please enable and click <a href="index">here</a>
+    </p>
+  </div>
+</noscript>

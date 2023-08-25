@@ -1,0 +1,39 @@
+/* Standard Media Queries */
+/*
+Note: The best way to structure the use of media queries is to create the queries
+near the relevant code. For example, if you wanted to change the styles for buttons
+on small devices, paste the mobile query code up in the buttons section and style it
+there.
+*/
+
+/* Small devices (up to 576px) */
+@media (max-width: 576px) {
+    /* Adjust styling for small devices here */
+    html {
+        width: 100%;
+    }
+}
+
+/* Medium devices (between 577px and 768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+    /* Adjust styling for medium devices here */
+    html {
+        width: 100%;
+    }
+}
+
+/* Large devices (between 769px and 992px) */
+@media (min-width: 769px) and (max-width: 992px) {
+    /* Adjust styling for large devices here */
+    html {
+        width: 100%;
+    }
+}
+
+/* Extra-large devices (993px and above) */
+@media (min-width: 993px) {
+    /* Adjust styling for extra-large devices here */
+    html {
+        width: 100%;
+    }
+}
